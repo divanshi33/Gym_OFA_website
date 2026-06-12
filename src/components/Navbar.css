@@ -1,0 +1,222 @@
+.navbar-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  z-index: 1000;
+  background: transparent;
+  transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border-bottom: 1px solid transparent;
+}
+
+.navbar-header.scrolled {
+  height: 75px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-color: var(--glass-border);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-container {
+  max-width: 1400px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 4%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-container .logo {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text-primary);
+  text-decoration: none;
+  letter-spacing: 1px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.navbar-container .logo:hover {
+  transform: scale(1.03);
+}
+
+.desktop-nav {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.desktop-nav a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  position: relative;
+  padding: 8px 0;
+  transition: var(--transition-smooth);
+  white-space: nowrap;
+}
+
+/* Gold underline hover effect */
+.desktop-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--gold-primary);
+  transition: var(--transition-smooth);
+  border-radius: 2px;
+}
+
+.desktop-nav a:hover {
+  color: var(--gold-primary);
+}
+
+.desktop-nav a:hover::after {
+  width: 100%;
+}
+
+/* Active page indicator */
+.desktop-nav a.active {
+  color: var(--gold-primary);
+}
+
+.desktop-nav a.active::after {
+  width: 100%;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navbar-auth-btn {
+  padding: 10px 20px !important;
+  font-size: 12px !important;
+  white-space: nowrap;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
+}
+
+.mobile-menu-toggle:hover {
+  color: var(--gold-primary);
+}
+
+/* Mobile Drawer */
+.mobile-drawer {
+  position: fixed;
+  top: 90px;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: rgba(5, 5, 5, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  overflow: hidden;
+  transition: var(--transition-smooth);
+  z-index: 999;
+  border-bottom: 0px solid var(--glass-border);
+}
+
+.navbar-header.scrolled + .mobile-drawer,
+.navbar-header.scrolled .mobile-drawer {
+  top: 75px;
+}
+
+.mobile-drawer.open {
+  height: calc(100vh - 90px);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.navbar-header.scrolled .mobile-drawer.open {
+  height: calc(100vh - 75px);
+}
+
+.mobile-nav {
+  padding: 40px 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+}
+
+.mobile-nav a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  transition: var(--transition-smooth);
+  position: relative;
+  padding-bottom: 6px;
+}
+
+.mobile-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--gold-primary);
+  transition: var(--transition-smooth);
+  border-radius: 2px;
+}
+
+.mobile-nav a:hover,
+.mobile-nav a.active {
+  color: var(--gold-primary);
+}
+
+.mobile-nav a:hover::after,
+.mobile-nav a.active::after {
+  width: 60%;
+}
+
+.mobile-auth-btn {
+  width: 80%;
+  max-width: 300px;
+  text-align: center;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 14px 28px !important;
+}
+
+@media (max-width: 1100px) {
+  .desktop-nav {
+    gap: 16px;
+  }
+  .desktop-nav a {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 991px) {
+  .desktop-nav {
+    display: none;
+  }
+  .mobile-menu-toggle {
+    display: flex;
+  }
+}

@@ -1,0 +1,169 @@
+.trainers-section {
+  background-color: var(--bg-secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(0, 229, 212, 0.05);
+  border-bottom: 1px solid rgba(0, 229, 212, 0.05);
+}
+
+.trainers-bg-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0, 229, 212, 0.02) 0%, rgba(0, 0, 0, 0) 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.trainers-title-wrapper {
+  text-align: center;
+  margin-bottom: 70px;
+  position: relative;
+  z-index: 2;
+  transform-origin: center center;
+}
+
+.trainers-heading {
+  font-size: 50px;
+  color: var(--text-primary);
+  letter-spacing: -1px;
+}
+
+.trainers-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  width: 100%;
+  max-width: 1100px;
+  position: relative;
+  z-index: 2;
+}
+
+.trainer-card-wrapper {
+  flex: 1;
+  max-width: 420px;
+  transform-origin: center center;
+}
+
+.trainer-card {
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 229, 212, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.trainer-card:hover {
+  border-color: var(--gold-primary);
+  box-shadow: 0 15px 35px var(--gold-glow-strong);
+  transform: translateY(-5px);
+}
+
+.trainer-img-container {
+  width: 100%;
+  height: 460px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--bg-tertiary);
+}
+
+.trainer-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.trainer-card:hover .trainer-img {
+  transform: scale(1.08);
+}
+
+.trainer-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0) 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  opacity: 0;
+  transition: var(--transition-smooth);
+}
+
+.trainer-card:hover .trainer-overlay {
+  opacity: 1;
+}
+
+.trainer-specialty {
+  color: var(--gold-primary);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transform: translateY(15px);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.trainer-card:hover .trainer-specialty {
+  transform: translateY(0);
+}
+
+.trainer-info {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.trainer-name {
+  font-size: 24px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  display: inline-block;
+  transform-origin: center center;
+  transition: color 0.3s ease;
+}
+
+.trainer-role {
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Tablet & Mobile Layouts */
+@media (max-width: 991px) {
+  .trainers-container {
+    gap: 30px;
+  }
+  .trainer-img-container {
+    height: 380px;
+  }
+}
+
+@media (max-width: 768px) {
+  .trainers-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .trainer-card-wrapper {
+    width: 100%;
+    max-width: 380px;
+  }
+  
+  .trainers-heading {
+    font-size: 40px;
+  }
+}

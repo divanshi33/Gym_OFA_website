@@ -1,0 +1,27 @@
+/* Gallery Page */
+.gallery-page-wrapper {
+  background: #000;
+  min-height: 100vh;
+  padding-top: 90px;
+}
+
+.gallery-page-hero {
+  text-align: center;
+  padding: 70px 5% 20px;
+  position: relative;
+}
+
+.gallery-page-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+}
+
+/* Reuse shared hero typography from Contact.css:
+   .subtitle-neon, .title-glow, .subtitle-desc
+   are defined globally via index.css as utility classes  */

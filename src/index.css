@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap');
+
+:root {
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0a;
+  --bg-tertiary: #121212;
+  
+  /* Aqua/Turquoise Brand Colors */
+  --primary-color: #00E5D4;
+  --primary-color-alt: #00b3a4;
+  --color-primary: #00E5D4;
+  --accent-cyan: #00FFFF;
+  --accent-glow: rgba(0, 229, 212, 0.15);
+  --accent-glow-strong: rgba(0, 229, 212, 0.35);
+
+  /* Mapping old gold theme variables to new aqua colors for safety */
+  --gold-primary: var(--primary-color);
+  --gold-secondary: var(--primary-color-alt);
+  --gold-glow: var(--accent-glow);
+  --gold-glow-strong: var(--accent-glow-strong);
+
+  --text-primary: #ffffff;
+  --text-secondary: #a3a3a3;
+  --text-muted: #666666;
+  --border-color: rgba(0, 229, 212, 0.2);
+  --border-color-hover: rgba(0, 229, 212, 0.45);
+  --glass-bg: rgba(5, 5, 5, 0.75);
+  --glass-border: rgba(0, 229, 212, 0.15);
+  --glass-blur: blur(12px);
+  --font-sans: 'Montserrat', sans-serif;
+  --font-heading: 'Syne', sans-serif;
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-tertiary);
+  border: 2px solid var(--bg-primary);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-secondary);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+/* Base Layout */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  position: relative;
+  padding: 100px 5% 80px 5%;
+  min-height: auto;
+  overflow: hidden;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+}
+
+/* Gold button */
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-secondary) 100%);
+  color: #000000;
+  border: none;
+  padding: 14px 28px;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 15px var(--gold-glow);
+  font-family: var(--font-sans);
+}
+
+.btn-gold:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px var(--gold-glow-strong);
+  filter: brightness(1.1);
+}
+
+.btn-gold:active {
+  transform: translateY(-1px);
+}
+
+/* Outline button */
+.btn-outline {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 13px 27px;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+}
+
+.btn-outline:hover {
+  background: rgba(255, 215, 0, 0.05);
+  border-color: var(--gold-primary);
+  color: var(--gold-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.05);
+}
+
+/* Text Highlights */
+.text-gold {
+  color: var(--gold-primary);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #ffffff 30%, var(--gold-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Sections titles */
+.section-title-container {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-subtitle {
+  color: var(--gold-primary);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.section-title {
+  font-size: 42px;
+  color: var(--text-primary);
+  position: relative;
+  display: inline-block;
+  padding-bottom: 12px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--gold-primary);
+  box-shadow: 0 0 10px var(--gold-primary);
+  border-radius: 2px;
+}
+
+/* Custom Cursor Glow */
+.cursor-glow {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0, 229, 212, 0.08) 0%, rgba(0, 229, 212, 0) 70%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: transform 0.1s ease-out;
+}
+
+
+@media (max-width: 768px) {
+  .cursor-glow {
+    display: none;
+  }
+  section {
+    padding: 70px 4% 50px 4%;
+  }
+  .section-title {
+    font-size: 32px;
+  }
+}
+
+/* =========================================================
+   GLOBAL PAGE-HERO TYPOGRAPHY  (shared across inner pages)
+   ========================================================= */
+
+/* Page wrapper – adds navbar offset for ALL inner pages */
+.page-wrapper {
+  background: var(--bg-primary);
+  min-height: 100vh;
+  padding-top: 90px;
+}
+
+/* Hero header block */
+.page-hero-block {
+  text-align: center;
+  padding: 70px 5% 30px;
+  position: relative;
+}
+
+.page-hero-block::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+  border-radius: 2px;
+}
+
+/* Shared typography helpers used on every inner page */
+.subtitle-neon {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  margin-bottom: 14px;
+}
+
+.title-glow {
+  font-family: var(--font-heading);
+  font-size: clamp(34px, 6vw, 60px);
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 0 0 40px rgba(0, 229, 212, 0.2);
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.subtitle-desc {
+  font-size: 15px;
+  color: var(--text-secondary);
+  max-width: 580px;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+/* Colour helpers */
+.text-aqua        { color: var(--primary-color); }
+.text-aqua-glow   {
+  color: var(--primary-color);
+  filter: drop-shadow(0 0 6px rgba(0, 229, 212, 0.6));
+}
+
+/* =========================================================
+   SHARED INNER-PAGE HERO   (used on About, Trainers, etc.)
+   ========================================================= */
+.inner-page-hero {
+  text-align: center;
+  padding: 70px 5% 30px;
+  position: relative;
+  background: transparent;
+}
+
+.inner-page-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+}
+
+@media (max-width: 768px) {
+  .page-wrapper  { padding-top: 90px; }
+  .page-hero-block { padding: 50px 5% 20px; }
+  .inner-page-hero { padding: 50px 5% 20px; }
+  .title-glow { font-size: 34px; }
+}

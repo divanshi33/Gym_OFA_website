@@ -1,0 +1,280 @@
+.hero-section {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #000000 0%, #0c0c0c 50%, #151515 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically inside 100vh */
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, rgba(20, 20, 20, 0.1) 0%, rgba(0, 0, 0, 0.98) 90%);
+  z-index: 1;
+}
+
+/* Background Glowing Orbs */
+.hero-glow-1 {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(0, 229, 212, 0.05) 0%, rgba(0, 229, 212, 0) 70%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-glow-2 {
+  position: absolute;
+  bottom: 20%;
+  right: 10%;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(0, 229, 212, 0.05) 0%, rgba(0, 229, 212, 0) 70%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Background Light Streaks */
+.hero-light-streak-1 {
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 150%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0, 229, 212, 0.12), transparent);
+  transform: rotate(-35deg);
+  z-index: 1;
+  animation: lightStreakPass1 12s infinite linear;
+}
+
+.hero-light-streak-2 {
+  position: absolute;
+  bottom: -20%;
+  right: -10%;
+  width: 150%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0, 229, 212, 0.12), transparent);
+  transform: rotate(-35deg);
+  z-index: 1;
+  animation: lightStreakPass2 15s infinite linear;
+}
+
+/* Background Particles */
+.hero-particles-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-particle {
+  position: absolute;
+  background-color: var(--gold-primary);
+  border-radius: 50%;
+  opacity: 0.2;
+  box-shadow: 0 0 8px var(--gold-primary);
+  animation: floatUp 8s infinite linear;
+}
+
+/* Motivational Quote Container */
+.hero-quote-container {
+  position: absolute;
+  top: 100px; /* 90px navbar + 10px spacing */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%; /* Exactly 70% width */
+  text-align: center;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.hero-quote-text {
+  font-family: var(--font-sans);
+  font-size: clamp(24px, 2.2vw, 36px); /* 32px-40px target range */
+  font-weight: 800;
+  color: #ffffff; /* White quote text */
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.2), 0 0 25px rgba(0, 0, 0, 0.9);
+  margin: 0;
+}
+
+/* Row wrapper: OWNER - IMAGE - VICKY */
+.hero-content-wrapper {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 95%;
+  max-width: 1400px;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Vertically centered */
+  gap: 40px;
+}
+
+/* Left: OWNER label */
+.hero-word-owner {
+  font-family: var(--font-heading);
+  font-size: clamp(45px, 6vw, 90px); /* 90px on Desktop */
+  font-weight: 900;
+  line-height: 1;
+  color: var(--gold-primary); /* Gold text */
+  letter-spacing: -0.02em;
+  text-shadow: 0 0 30px rgba(0, 229, 212, 0.25);
+  user-select: none;
+  pointer-events: none;
+  transform-origin: right center;
+  flex: 1;
+  text-align: right;
+  z-index: 2;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* Center: Circular Image Container */
+.hero-image-outer {
+  width: 260px; /* 260px Desktop */
+  height: 260px;
+  position: relative;
+  border-radius: 50%;
+  box-shadow: 0 0 40px rgba(0, 229, 212, 0.4);
+  transform-origin: center center;
+  z-index: 5;
+  flex-shrink: 0;
+}
+
+.hero-image-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid var(--gold-primary);
+  background-color: var(--bg-tertiary);
+  position: relative;
+  z-index: 3;
+}
+
+.hero-owner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.hero-image-glow-ring {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border-radius: 50%;
+  border: 2px dashed rgba(0, 229, 212, 0.5);
+  z-index: 2;
+  animation: pulseCircularRing 3s ease-in-out infinite alternate;
+}
+
+/* Right: VICKY label */
+.hero-owner-name {
+  font-family: var(--font-heading);
+  font-size: clamp(45px, 6vw, 90px); /* 90px on Desktop */
+  font-weight: 900;
+  line-height: 1;
+  color: #ffffff; /* White text */
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+  text-align: left;
+  letter-spacing: -0.02em;
+  text-transform: uppercase; /* VICKY uppercase */
+  transform-origin: left center;
+  flex: 1;
+  z-index: 6;
+  white-space: nowrap;
+  margin: 0;
+}
+
+/* Scroll indicator */
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  pointer-events: none;
+}
+
+.animate-bounce-custom {
+  animation: bounceCustom 1.5s infinite alternate;
+}
+
+/* Mobile & Tablet Responsiveness */
+@media (max-width: 1024px) {
+  .hero-section {
+    padding-top: 120px;
+  }
+
+  .hero-quote-container {
+    top: 95px;
+    width: 85%;
+  }
+
+  .hero-content-wrapper {
+    gap: 30px;
+    margin-top: 60px;
+  }
+
+  .hero-image-outer {
+    width: 220px; /* 220px Tablet */
+    height: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content-wrapper {
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .hero-word-owner {
+    text-align: center;
+    transform-origin: center center;
+  }
+
+  .hero-owner-name {
+    text-align: center;
+    transform-origin: center center;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-quote-container {
+    width: 90%;
+  }
+  .hero-image-outer {
+    width: 180px; /* 180px Mobile */
+    height: 180px;
+  }
+}

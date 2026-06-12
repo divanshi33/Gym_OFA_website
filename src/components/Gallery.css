@@ -1,0 +1,217 @@
+.gallery-section {
+  background-color: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-masonry-grid {
+  column-count: 3;
+  column-gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.gallery-item {
+  display: inline-block;
+  margin-bottom: 20px;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 229, 212, 0.15);
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  background-color: var(--bg-tertiary);
+  break-inside: avoid; /* Prevent card splitting across columns */
+}
+
+.gallery-img {
+  width: 100%;
+  display: block;
+  height: auto;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-item:hover .gallery-img {
+  transform: scale(1.08);
+}
+
+/* Hover overlay detail */
+.gallery-item-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  transition: var(--transition-smooth);
+}
+
+.gallery-item:hover .gallery-item-hover {
+  opacity: 1;
+}
+
+.hover-icon {
+  transform: translateY(10px);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-item:hover .hover-icon {
+  transform: translateY(0);
+}
+
+.hover-title {
+  font-size: 14px;
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  letter-spacing: 0.1em;
+  transform: translateY(15px);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-item:hover .hover-title {
+  transform: translateY(0);
+}
+
+/* Lightbox Modal */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: 1002;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  animation: fadeIn 0.3s ease;
+}
+
+.lightbox-close-btn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.lightbox-close-btn:hover {
+  color: var(--gold-primary);
+  transform: rotate(90deg) scale(1.1);
+}
+
+.lightbox-nav-btn {
+  background: rgba(0, 229, 212, 0.03);
+  border: 1px solid rgba(0, 229, 212, 0.15);
+  color: var(--text-primary);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.lightbox-nav-btn:hover {
+  background: var(--gold-primary);
+  color: #000000;
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 15px var(--gold-glow-strong);
+}
+
+.prev-image-btn {
+  margin-right: 40px;
+}
+
+.next-image-btn {
+  margin-left: 40px;
+}
+
+.lightbox-content {
+  max-width: 80%;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: scaleUp 0.3s ease;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 75vh;
+  border-radius: 4px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 229, 212, 0.15);
+  border: 1px solid rgba(0, 229, 212, 0.2);
+  object-fit: contain;
+}
+
+.lightbox-caption {
+  margin-top: 15px;
+  color: var(--gold-primary);
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Tablet & Mobile Layouts */
+@media (max-width: 991px) {
+  .gallery-masonry-grid {
+    column-count: 2;
+  }
+  .lightbox-nav-btn {
+    width: 44px;
+    height: 44px;
+  }
+  .prev-image-btn {
+    margin-right: 20px;
+  }
+  .next-image-btn {
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-masonry-grid {
+    column-count: 1;
+    max-width: 450px;
+  }
+  .lightbox-overlay {
+    padding: 10px;
+  }
+  .lightbox-nav-btn {
+    position: absolute;
+    bottom: 20px;
+    top: auto;
+    transform: none;
+  }
+  .prev-image-btn {
+    left: 20px;
+  }
+  .next-image-btn {
+    right: 20px;
+  }
+  .lightbox-content {
+    max-width: 95%;
+  }
+}

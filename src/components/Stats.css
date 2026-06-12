@@ -1,0 +1,90 @@
+.stats-section {
+  padding: 40px 5%;
+  background-color: var(--bg-primary);
+}
+
+.stats-grid-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 30px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 229, 212, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 229, 212, 0.05);
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  flex: 1;
+  min-width: 180px;
+}
+
+.stat-value {
+  margin-bottom: 8px;
+}
+
+.counter-number {
+  font-family: var(--font-heading);
+  font-size: 54px;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--gold-primary);
+  text-shadow: 0 0 10px rgba(0, 229, 212, 0.35);
+}
+
+.stat-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-secondary);
+}
+
+.stat-divider {
+  position: absolute;
+  right: -25px;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background: linear-gradient(to bottom, rgba(0, 229, 212, 0) 0%, rgba(0, 229, 212, 0.2) 50%, rgba(0, 229, 212, 0) 100%);
+}
+
+/* Responsiveness */
+@media (max-width: 991px) {
+  .stat-divider {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-grid-wrapper {
+    padding: 30px 20px;
+  }
+  .counter-number {
+    font-size: 42px;
+  }
+  .stat-item {
+    min-width: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-container {
+    flex-direction: column;
+    gap: 35px;
+  }
+  .stat-item {
+    min-width: 100%;
+  }
+}

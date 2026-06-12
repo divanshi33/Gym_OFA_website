@@ -1,0 +1,285 @@
+.bmi-section {
+  background-color: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(0, 229, 212, 0.05);
+}
+
+.bmi-container {
+  display: flex;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 229, 212, 0.15);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  z-index: 2;
+  position: relative;
+}
+
+.bmi-form-wrapper,
+.bmi-output-wrapper {
+  flex: 1;
+  padding: 50px;
+}
+
+.bmi-form-wrapper {
+  background: rgba(5, 5, 5, 0.6);
+  border-right: 1px solid rgba(0, 229, 212, 0.15);
+}
+
+.bmi-output-wrapper {
+  background: rgba(10, 10, 10, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bmi-subtitle {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.bmi-intro {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 35px;
+}
+
+.bmi-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.bmi-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bmi-input-group label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+}
+
+.bmi-input-group input {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 15px;
+  font-size: 15px;
+  font-family: var(--font-sans);
+  border-radius: 4px;
+  transition: var(--transition-smooth);
+}
+
+.bmi-input-group input:focus {
+  outline: none;
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 10px var(--gold-glow);
+}
+
+.bmi-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.btn-bmi-submit {
+  flex: 2;
+  justify-content: center;
+}
+
+.btn-bmi-reset {
+  flex: 1;
+  justify-content: center;
+}
+
+/* Placeholder Output State */
+.bmi-output-placeholder {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 280px;
+}
+
+.placeholder-icon-ring {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 1px dashed rgba(0, 229, 212, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: rotateGlowRing 20s linear infinite;
+}
+
+.placeholder-icon {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  color: var(--gold-primary);
+  font-weight: 800;
+}
+
+.bmi-output-placeholder p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Active Result State styling */
+.bmi-result-panel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bmi-value-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.result-val {
+  font-family: var(--font-heading);
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--text-primary);
+}
+
+.result-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--text-secondary);
+  margin-top: 5px;
+}
+
+.bmi-category-badge {
+  font-size: 20px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 35px;
+  text-shadow: 0 0 10px var(--gold-glow);
+}
+
+/* Gauge styling */
+.bmi-gauge-container {
+  width: 100%;
+  margin-bottom: 35px;
+}
+
+.bmi-gauge-bar {
+  height: 12px;
+  width: 100%;
+  border-radius: 6px;
+  display: flex;
+  position: relative;
+  margin-bottom: 10px;
+  overflow: visible; /* Needle extends outside */
+}
+
+.gauge-segment {
+  height: 100%;
+  flex: 1;
+}
+
+.gauge-segment.underweight {
+  background-color: rgba(52, 152, 219, 0.4); /* Blue shade */
+  border-radius: 6px 0 0 6px;
+}
+
+.gauge-segment.normal {
+  background-color: rgba(46, 204, 113, 0.4); /* Green/Gold shade */
+}
+
+.gauge-segment.overweight {
+  background-color: rgba(241, 196, 15, 0.4); /* Gold/Orange shade */
+}
+
+.gauge-segment.obese {
+  background-color: rgba(231, 76, 60, 0.4); /* Red/Hot shade */
+  border-radius: 0 6px 6px 0;
+}
+
+/* Needle styling */
+.bmi-gauge-needle {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--gold-primary);
+  border: 3px solid #000000;
+  box-shadow: 0 0 10px var(--gold-primary);
+  transition: left 1s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.needle-pointer {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 7px solid var(--gold-primary);
+  position: absolute;
+  bottom: 18px;
+}
+
+.bmi-gauge-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  padding: 0 2px;
+}
+
+.bmi-advice {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  text-align: center;
+  max-width: 380px;
+}
+
+.animate-scale {
+  animation: scaleUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Tablet & Mobile Layouts */
+@media (max-width: 991px) {
+  .bmi-container {
+    flex-direction: column;
+  }
+  .bmi-form-wrapper {
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 229, 212, 0.15);
+  }
+}
+
+@media (max-width: 576px) {
+  .bmi-form-wrapper,
+  .bmi-output-wrapper {
+    padding: 30px 20px;
+  }
+}
