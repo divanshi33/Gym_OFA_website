@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { ArrowUp } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -11,6 +11,17 @@ import Gallery from './pages/Gallery';
 import TrainersPage from './pages/TrainersPage';
 import NotFound from './pages/NotFound';
 import './App.css';
+
+// Reset scroll position to top when changing pages
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -53,6 +64,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="app-container">
         {/* Scroll Progress Indicator */}
         <div className="scroll-progress-container">
