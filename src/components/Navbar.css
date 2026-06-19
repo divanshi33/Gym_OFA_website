@@ -31,18 +31,25 @@
 }
 
 .navbar-container .logo {
-  font-family: var(--font-heading);
-  font-size: 26px;
-  font-weight: 800;
-  color: var(--text-primary);
   text-decoration: none;
-  letter-spacing: 1px;
   display: inline-block;
   transition: transform 0.3s ease;
 }
 
 .navbar-container .logo:hover {
   transform: scale(1.03);
+}
+
+.navbar-logo-img {
+  height: 52px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.navbar-header.scrolled .navbar-logo-img {
+  height: 44px;
 }
 
 .desktop-nav {

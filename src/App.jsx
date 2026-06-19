@@ -4,12 +4,6 @@ import { ArrowUp } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import TestimonialsPage from './pages/TestimonialsPage';
-import Gallery from './pages/Gallery';
-import TrainersPage from './pages/TrainersPage';
-import NotFound from './pages/NotFound';
 import './App.css';
 
 // Reset scroll position to top when changing pages
@@ -84,13 +78,7 @@ export default function App() {
         <Navbar />
         {/* Page Routes */}
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/testimonials" element={<TestimonialsPage />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/trainers" element={<TrainersPage />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<Home />} />
         </Routes>
         {/* Footer */}
         <Footer />

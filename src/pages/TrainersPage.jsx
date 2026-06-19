@@ -53,15 +53,10 @@ const TRAINERS_DATA = [
 
 export default function TrainersPage() {
   return (
-    <div className="page-wrapper">
-    <div className="trainers-page-wrapper">
-      <div className="inner-page-hero">
-        <div className="trainers-hero-glow"></div>
-        <span className="subtitle-neon">OFA ELITE INSTRUCTORS</span>
-        <h1 className="title-glow">MEET OUR TRAINERS</h1>
-        <p className="subtitle-desc">
-          OFA brings the academy's elite fitness trainers straight to your doorstep or society gym.
-        </p>
+    <section id="trainers" className="trainers-page-wrapper">
+      <div className="section-title-container">
+        <span className="section-subtitle">OFA ELITE INSTRUCTORS</span>
+        <h2 className="section-title">MEET OUR TRAINERS</h2>
       </div>
 
       <div className="trainers-cards-container">
@@ -136,12 +131,11 @@ export default function TrainersPage() {
           Book your first trial session with Sunny or Razab. Our trainers travel directly to your location with all necessary equipment.
         </p>
         <div className="cta-buttons-wrapper">
-          <a href="/contact" className="btn-main-trial">
+          <a href="#contact" className="btn-main-trial">
             Book Free Trial Now
           </a>
         </div>
       </section>
-    </div>
-    </div>
+    </section>
   );
 }

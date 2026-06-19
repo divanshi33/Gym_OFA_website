@@ -1,17 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 import Offers from '../components/Offers';
 import Stats from '../components/Stats';
+import About from './About';
+import TestimonialsPage from './TestimonialsPage';
+import Gallery from '../components/Gallery';
+import TrainersPage from './TrainersPage';
+import Contact from '../components/Contact';
 import { ArrowRight, Dumbbell, Phone } from 'lucide-react';
 import './Home.css';
 
 export default function Home() {
   return (
     <main>
-      <Hero />
-      <Offers />
-      <Stats />
+      <div id="home">
+        <Hero />
+        <Offers />
+        <Stats />
+      </div>
 
       {/* ── Book Free Trial CTA ── */}
       <section className="home-cta-section">
@@ -35,9 +41,9 @@ export default function Home() {
           </p>
 
           <div className="home-cta-actions">
-            <Link to="/contact" className="home-cta-btn-primary">
+            <a href="#contact" className="home-cta-btn-primary">
               Book Free Trial <ArrowRight size={18} />
-            </Link>
+            </a>
             <a href="tel:+917827127138" className="home-cta-btn-secondary">
               <Phone size={16} /> Call Now
             </a>
@@ -51,6 +57,12 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <About />
+      <TestimonialsPage />
+      <Gallery />
+      <TrainersPage />
+      <Contact />
     </main>
   );
 }

@@ -1,18 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Shield, Target, Compass, Award, ShieldCheck, Zap } from 'lucide-react';
+import { Target, Compass, Award, ShieldCheck, Zap } from 'lucide-react';
 import './About.css';
 
 export default function About() {
   return (
-    <div className="page-wrapper">
-    <section className="about-page-wrapper">
-      <div className="inner-page-hero">
-        <span className="subtitle-neon">ESTABLISHED EXCELLENCE</span>
-        <h1 className="title-glow">ABOUT OK FITNESS ACADEMY</h1>
-        <p className="subtitle-desc">
-          We bring high-end athletic training and custom wellness directly to your location.
-        </p>
+    <section id="about" className="about-page-wrapper">
+      <div className="section-title-container">
+        <span className="section-subtitle">ESTABLISHED EXCELLENCE</span>
+        <h2 className="section-title">ABOUT OK FITNESS ACADEMY</h2>
       </div>
 
       <div className="about-grid-container">
@@ -97,12 +92,10 @@ export default function About() {
       {/* Why Choose OFA CTA */}
       <div className="about-cta-footer">
         <h3>Ready to experience elite, convenient coaching?</h3>
-        <Link to="/contact" className="btn-gold">
+        <a href="#contact" className="btn-gold">
           Book Your Free Trial Today
-        </Link>
+        </a>
       </div>
     </section>
-    </div>
   );
 }
-

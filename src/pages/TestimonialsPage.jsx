@@ -24,14 +24,10 @@ const SUCCESS_STORIES = [
 
 export default function TestimonialsPage() {
   return (
-    <div className="page-wrapper">
-    <div className="testimonials-page-wrapper">
-      <div className="inner-page-hero">
-        <span className="subtitle-neon">OFA SUCCESS STORIES</span>
-        <h1 className="title-glow">CLIENT TRANSFORMATIONS</h1>
-        <p className="subtitle-desc">
-          Real results from real members. See how our dedicated training programs have reshaped lives.
-        </p>
+    <section id="testimonials" className="testimonials-page-wrapper">
+      <div className="section-title-container">
+        <span className="section-subtitle">OFA SUCCESS STORIES</span>
+        <h2 className="section-title">CLIENT TRANSFORMATIONS</h2>
       </div>
 
       {/* Auto Carousel Component */}
@@ -94,7 +90,6 @@ export default function TestimonialsPage() {
           </div>
         </div>
       </section>
-    </div>
-    </div>
+    </section>
   );
 }
