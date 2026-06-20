@@ -19,7 +19,7 @@ export default function Navbar() {
       }
 
       // Check which section is in view
-      const sections = ['home', 'about', 'testimonials', 'gallery', 'trainers', 'contact'];
+      const sections = ['home', 'testimonials', 'gallery', 'join-team', 'about', 'trainers', 'support', 'contact'];
       const scrollPosition = window.scrollY + window.innerHeight / 3;
 
       for (const sectionId of sections) {
@@ -58,42 +58,13 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         <nav className="desktop-nav">
-          <a 
-            href="#home" 
-            className={activeSection === 'home' ? 'active' : ''} 
-          >
-            Home
-          </a>
-          <a 
-            href="#about" 
-            className={activeSection === 'about' ? 'active' : ''}
-          >
-            About Us
-          </a>
-          <a 
-            href="#testimonials" 
-            className={activeSection === 'testimonials' ? 'active' : ''}
-          >
-            Testimonials
-          </a>
-          <a 
-            href="#gallery" 
-            className={activeSection === 'gallery' ? 'active' : ''}
-          >
-            Gallery
-          </a>
-          <a 
-            href="#trainers" 
-            className={activeSection === 'trainers' ? 'active' : ''}
-          >
-            Our Trainers
-          </a>
-          <a 
-            href="#contact" 
-            className={activeSection === 'contact' ? 'active' : ''}
-          >
-            Contact Us
-          </a>
+          <a href="#home" className={activeSection === 'home' ? 'active' : ''}>Home</a>
+          <a href="#testimonials" className={activeSection === 'testimonials' ? 'active' : ''}>Testimonials</a>
+          <a href="#gallery" className={activeSection === 'gallery' ? 'active' : ''}>Gallery</a>
+          <a href="#join-team" className={activeSection === 'join-team' ? 'active' : ''}>Join Team</a>
+          <a href="#about" className={activeSection === 'about' ? 'active' : ''}>About Us</a>
+          <a href="#trainers" className={activeSection === 'trainers' ? 'active' : ''}>Trainers</a>
+          <a href="#contact" className={activeSection === 'contact' ? 'active' : ''}>Contact</a>
         </nav>
 
         <div className="navbar-actions">
@@ -113,54 +84,15 @@ export default function Navbar() {
       {/* Mobile Drawer */}
       <div className={`mobile-drawer ${mobileMenuOpen ? 'open' : ''}`}>
         <nav className="mobile-nav">
-          <a 
-            href="#home" 
-            className={activeSection === 'home' ? 'active' : ''} 
-            onClick={closeMobileMenu}
-          >
-            Home
-          </a>
-          <a 
-            href="#about" 
-            className={activeSection === 'about' ? 'active' : ''} 
-            onClick={closeMobileMenu}
-          >
-            About Us
-          </a>
-          <a 
-            href="#testimonials" 
-            className={activeSection === 'testimonials' ? 'active' : ''} 
-            onClick={closeMobileMenu}
-          >
-            Testimonials
-          </a>
-          <a 
-            href="#gallery" 
-            className={activeSection === 'gallery' ? 'active' : ''} 
-            onClick={closeMobileMenu}
-          >
-            Gallery
-          </a>
-          <a 
-            href="#trainers" 
-            className={activeSection === 'trainers' ? 'active' : ''} 
-            onClick={closeMobileMenu}
-          >
-            Our Trainers
-          </a>
-          <a 
-            href="#contact" 
-            className={activeSection === 'contact' ? 'active' : ''} 
-            onClick={closeMobileMenu}
-          >
-            Contact Us
-          </a>
+          <a href="#home" className={activeSection === 'home' ? 'active' : ''} onClick={closeMobileMenu}>Home</a>
+          <a href="#testimonials" className={activeSection === 'testimonials' ? 'active' : ''} onClick={closeMobileMenu}>Testimonials</a>
+          <a href="#gallery" className={activeSection === 'gallery' ? 'active' : ''} onClick={closeMobileMenu}>Gallery</a>
+          <a href="#join-team" className={activeSection === 'join-team' ? 'active' : ''} onClick={closeMobileMenu}>Join Team</a>
+          <a href="#about" className={activeSection === 'about' ? 'active' : ''} onClick={closeMobileMenu}>About Us</a>
+          <a href="#trainers" className={activeSection === 'trainers' ? 'active' : ''} onClick={closeMobileMenu}>Trainers</a>
+          <a href="#contact" className={activeSection === 'contact' ? 'active' : ''} onClick={closeMobileMenu}>Contact</a>
 
-          <a 
-            href="#contact" 
-            onClick={closeMobileMenu} 
-            className="btn-gold mobile-auth-btn"
-          >
+          <a href="#contact" onClick={closeMobileMenu} className="btn-gold mobile-auth-btn">
             Book Free Trial
           </a>
         </nav>

@@ -1,11 +1,14 @@
 import React from 'react';
 import Hero from '../components/Hero';
-import Offers from '../components/Offers';
 import Stats from '../components/Stats';
-import About from './About';
 import TestimonialsPage from './TestimonialsPage';
 import Gallery from '../components/Gallery';
+import JoinTeam from '../components/JoinTeam';
+import About from './About';
+import OwnerSection from '../components/OwnerSection';
 import TrainersPage from './TrainersPage';
+import SupportLinks from '../components/SupportLinks';
+import BMICalculator from '../components/BMICalculator';
 import Contact from '../components/Contact';
 import { ArrowRight, Dumbbell, Phone } from 'lucide-react';
 import './Home.css';
@@ -13,15 +16,16 @@ import './Home.css';
 export default function Home() {
   return (
     <main>
+      {/* 1. Hero – What We Offer (services grid + CTA) */}
       <div id="home">
         <Hero />
-        <Offers />
-        <Stats />
       </div>
 
-      {/* ── Book Free Trial CTA ── */}
+      {/* 2. Stats strip */}
+      <Stats />
+
+      {/* 3. Book a Trial CTA Box */}
       <section className="home-cta-section">
-        {/* Background radial blobs */}
         <div className="home-cta-blob home-cta-blob-1"></div>
         <div className="home-cta-blob home-cta-blob-2"></div>
 
@@ -58,10 +62,31 @@ export default function Home() {
         </div>
       </section>
 
-      <About />
+      {/* 4. Testimonials */}
       <TestimonialsPage />
+
+      {/* 5. Gallery */}
       <Gallery />
+
+      {/* 6. Join Our Team */}
+      <JoinTeam />
+
+      {/* 7. About OFA */}
+      <About />
+
+      {/* 8. Owner – Vicky */}
+      <OwnerSection />
+
+      {/* 9. Trainers */}
       <TrainersPage />
+
+      {/* 10. Customer Support Links */}
+      <SupportLinks />
+
+      {/* 11. BMI Calculator */}
+      <BMICalculator />
+
+      {/* 12. Contact Form */}
       <Contact />
     </main>
   );

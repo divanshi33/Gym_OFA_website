@@ -1,0 +1,269 @@
+/* ═══════════════════════════════════
+   OWNER SECTION
+═══════════════════════════════════ */
+.owner-section {
+  position: relative;
+  padding: 100px 5% 80px;
+  overflow: hidden;
+}
+
+/* blobs */
+.owner-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  opacity: 0.1;
+}
+.owner-blob-left {
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, #00E5D4, transparent 70%);
+  top: -80px;
+  left: -100px;
+}
+.owner-blob-right {
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, #FFD700, transparent 70%);
+  bottom: -60px;
+  right: -80px;
+}
+
+/* ── main card ── */
+.owner-card-wrapper {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 56px 52px;
+  border-radius: 24px;
+}
+
+/* ── photo column ── */
+.owner-photo-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.owner-photo-frame {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.owner-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 50%;
+  border: 5px solid var(--color-primary, #00E5D4);
+  box-shadow: 0 0 40px rgba(0, 229, 212, 0.35), 0 0 80px rgba(0, 229, 212, 0.12);
+  display: block;
+}
+
+.owner-photo-ring {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border-radius: 50%;
+  border: 2px dashed rgba(0, 229, 212, 0.4);
+  animation: spinSlow 12s linear infinite;
+}
+
+.owner-founder-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, rgba(0,229,212,0.15), rgba(255,215,0,0.1));
+  border: 1px solid rgba(0,229,212,0.3);
+  border-radius: 999px;
+  padding: 7px 20px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--color-primary, #00E5D4);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* ── info column ── */
+.owner-info-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.owner-name {
+  font-family: var(--font-heading, 'Bebas Neue', sans-serif);
+  font-size: clamp(52px, 6vw, 80px);
+  font-weight: 900;
+  color: #fff;
+  margin: 0;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.owner-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-primary, #00E5D4);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+
+.owner-bio {
+  font-size: 0.97rem;
+  color: #a0aec0;
+  line-height: 1.75;
+  margin: 0;
+}
+
+.owner-bio strong { color: #e2e8f0; }
+.owner-bio em    { color: #FFD700; font-style: italic; }
+
+/* ── achievements ── */
+.owner-achievements {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.owner-ach-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  background: rgba(0,229,212,0.05);
+  border: 1px solid rgba(0,229,212,0.15);
+  border-radius: 14px;
+  padding: 14px 18px;
+  min-width: 130px;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+.owner-ach-card:hover {
+  border-color: rgba(0,229,212,0.35);
+  background: rgba(0,229,212,0.09);
+}
+
+.owner-ach-icon {
+  color: var(--color-primary, #00E5D4);
+  margin-bottom: 2px;
+}
+
+.owner-ach-label {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.owner-ach-sub {
+  font-size: 0.75rem;
+  color: #718096;
+  line-height: 1.35;
+}
+
+/* ── CTA row ── */
+.owner-cta-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.owner-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 26px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 999px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.owner-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255,215,0,0.25);
+}
+
+.owner-wa-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 24px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid rgba(37,211,102,0.35);
+  border-radius: 999px;
+  color: #25D366;
+  background: rgba(37,211,102,0.07);
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+.owner-wa-btn:hover {
+  background: rgba(37,211,102,0.15);
+  border-color: rgba(37,211,102,0.55);
+  transform: translateY(-2px);
+}
+
+/* ── keyframe ── */
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .owner-card-wrapper {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 36px 28px;
+    gap: 32px;
+  }
+  .owner-achievements {
+    justify-content: center;
+  }
+  .owner-cta-row {
+    justify-content: center;
+  }
+  .owner-title {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .owner-photo-frame {
+    width: 220px;
+    height: 220px;
+  }
+  .owner-achievements {
+    flex-direction: column;
+    align-items: center;
+  }
+  .owner-ach-card {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .owner-photo-ring { animation: none !important; }
+  .owner-ach-card,
+  .owner-cta-btn,
+  .owner-wa-btn { transition: none !important; }
+  .owner-ach-card:hover,
+  .owner-cta-btn:hover,
+  .owner-wa-btn:hover { transform: none; }
+}
