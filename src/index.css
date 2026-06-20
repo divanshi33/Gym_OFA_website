@@ -225,10 +225,22 @@ section {
     display: none;
   }
   section {
-    padding: 70px 4% 50px 4%;
+    padding: 70px 5% 50px 5%;
   }
   .section-title {
-    font-size: 32px;
+    font-size: 28px;
+    max-width: 100%;
+    word-wrap: break-word;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 22px;
+  }
+  .section-subtitle {
+    font-size: 11px;
+    letter-spacing: 0.15em;
   }
 }
 
