@@ -238,6 +238,16 @@
     gap: 30px;
   }
   .about-narrative {
-    padding: 24px;
+    padding: 20px;
+  }
+  .stats-box-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .philosophy-section {
+    padding: 24px 20px;
+  }
+  .philosophy-headline {
+    font-size: 1.5rem;
   }
 }

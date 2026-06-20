@@ -335,4 +335,13 @@
   .trainer-card-cta {
     grid-template-columns: 1fr;
   }
+  
+  .cta-headline {
+    font-size: 1.6rem;
+  }
+  
+  .academy-cta-block {
+    padding: 30px 16px;
+    margin-top: 40px;
+  }
 }
